@@ -1,26 +1,34 @@
 :root{
+  /* Dark-retro palette (same UI, no bright whites) */
   --bg1:#070815;
   --bg2:#0e1430;
+
   --panel:#0f1222;
   --panel2:#0b0e1b;
+
   --ink:#f2f4ff;
   --muted:#a8acc4;
+
   --accent:#00d4ff;
   --accent2:#ff3bd4;
+
   --ok:#30e07a;
   --warn:#ffd15a;
   --danger:#ff3b5c;
+
   --shadow: 0 14px 0 rgba(0,0,0,.55);
   --border-dark:#060713;
   --border-light:rgba(255,255,255,.22);
+
+  --glass: rgba(255,255,255,.06);
+  --glass2: rgba(255,255,255,.03);
 }
 
 *{box-sizing:border-box}
 html,body{height:100%}
-
 body{
   margin:0;
-  font-family: "Verdana","MS Sans Serif",system-ui,sans-serif;
+  font-family: "Verdana", "MS Sans Serif", system-ui, sans-serif;
   color:var(--ink);
   background:
     radial-gradient(circle at 25% 25%, rgba(255,255,255,.08), transparent 40%),
@@ -33,4 +41,259 @@ body{
   padding:24px;
 }
 
-/* everything else unchanged from your original */
+.shell{
+  width:min(1080px, 100%);
+  display:grid;
+  gap:16px;
+}
+
+.topbar{
+  background: linear-gradient(90deg, #1b2a6b, #4b2aa6, #b12a7e);
+  color:#fff;
+  padding:12px 14px;
+  border:1px solid var(--border-light);
+  outline:2px solid var(--border-dark);
+  box-shadow: var(--shadow);
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+}
+
+.brand{
+  display:flex;
+  align-items:center;
+  gap:10px;
+  font-weight:700;
+  letter-spacing:.4px;
+  text-transform:uppercase;
+  font-size:14px;
+}
+
+.pixel{
+  width:14px;height:14px;
+  background: conic-gradient(from 180deg, var(--accent), var(--accent2), var(--accent));
+  border:2px solid rgba(255,255,255,.85);
+  outline:2px solid #000;
+}
+
+.hint{
+  font-size:12px;
+  opacity:.9;
+  text-align:right;
+  line-height:1.25;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: 1.15fr .85fr;
+  gap:16px;
+}
+
+@media (max-width: 900px){
+  .grid{grid-template-columns:1fr}
+  .hint{text-align:left}
+}
+
+.window{
+  background: linear-gradient(180deg, rgba(255,255,255,.05), rgba(255,255,255,.02));
+  border:1px solid var(--border-light);
+  outline:2px solid var(--border-dark);
+  box-shadow: var(--shadow);
+  overflow:hidden;
+  backdrop-filter: blur(6px);
+}
+
+.win-title{
+  background: linear-gradient(90deg, #0c3cff, #00d4ff);
+  color:#06101a;
+  padding:10px 12px;
+  font-weight:900;
+  font-size:13px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  text-transform:uppercase;
+  border-bottom:1px solid rgba(255,255,255,.18);
+  text-shadow: 0 1px 0 rgba(255,255,255,.35);
+}
+
+.subtle{
+  font-size:11px;
+  opacity:.92;
+  color:#06101a;
+}
+
+.win-body{
+  background: linear-gradient(180deg, rgba(0,0,0,.18), rgba(0,0,0,.28));
+  padding:14px;
+}
+
+label{
+  display:block;
+  font-size:12px;
+  font-weight:900;
+  margin-bottom:8px;
+  text-transform:uppercase;
+  color:var(--muted);
+  letter-spacing:.35px;
+}
+
+textarea{
+  width:100%;
+  resize:vertical;
+  padding:12px;
+  border:1px solid rgba(255,255,255,.22);
+  outline:2px solid rgba(0,0,0,.55);
+  background: linear-gradient(180deg, rgba(10,12,24,.92), rgba(6,7,16,.92));
+  color:var(--ink);
+  font-family: "Courier New", monospace;
+  font-size:13px;
+  line-height:1.4;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.05);
+}
+textarea::placeholder{ color: rgba(242,244,255,.45); }
+
+.ta-goals{ min-height:110px; }
+.ta-today{ min-height:240px; }
+
+.refbox{
+  background: linear-gradient(180deg, rgba(10,12,24,.92), rgba(6,7,16,.92));
+  border:1px solid rgba(255,255,255,.22);
+  outline:2px solid rgba(0,0,0,.55);
+  padding:12px;
+  font-family:"Courier New", monospace;
+  font-size:13px;
+  line-height:1.4;
+  white-space:pre-wrap;
+  word-wrap:break-word;
+  min-height:120px;
+  box-shadow: inset 0 2px 0 rgba(255,255,255,.05);
+  color:var(--ink);
+}
+
+.ref-muted{
+  color: rgba(168,172,196,.85);
+  font-family: "Verdana","MS Sans Serif",system-ui,sans-serif;
+  font-size:11px;
+  margin-top:6px;
+  text-transform:uppercase;
+  letter-spacing:.35px;
+  font-weight:900;
+  opacity:.9;
+}
+
+.row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:12px;
+}
+
+button{
+  cursor:pointer;
+  padding:10px 12px;
+  border:1px solid rgba(255,255,255,.22);
+  outline:2px solid rgba(0,0,0,.65);
+  background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.04));
+  color:var(--ink);
+  font-weight:900;
+  text-transform:uppercase;
+  font-size:12px;
+  letter-spacing:.45px;
+  box-shadow: 0 8px 0 rgba(0,0,0,.50);
+  transition: transform .06s ease, filter .12s ease;
+}
+button:hover{ filter: brightness(1.08); }
+button:active{ transform: translateY(2px); box-shadow: 0 6px 0 rgba(0,0,0,.50); }
+
+.btn-primary{
+  background: linear-gradient(180deg, rgba(0,212,255,.28), rgba(0,212,255,.10));
+}
+.btn-ok{
+  background: linear-gradient(180deg, rgba(48,224,122,.26), rgba(48,224,122,.10));
+}
+.btn-danger{
+  background: linear-gradient(180deg, rgba(255,59,92,.28), rgba(255,59,92,.12));
+}
+
+.stats{ display:grid; gap:12px; }
+
+.stat{
+  background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.025));
+  border:1px solid rgba(255,255,255,.22);
+  outline:2px solid rgba(0,0,0,.65);
+  padding:12px;
+  color:var(--ink);
+}
+
+.stat h3{
+  margin:0 0 6px 0;
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:.4px;
+  color:var(--muted);
+  font-weight:900;
+}
+
+.big{
+  font-size:34px;
+  font-weight:1000;
+  letter-spacing:.6px;
+  margin:0;
+  display:flex;
+  align-items:baseline;
+  gap:10px;
+  color:var(--ink);
+}
+
+.pill{
+  display:inline-flex;
+  align-items:center;
+  gap:6px;
+  padding:4px 8px;
+  border:1px solid rgba(255,255,255,.22);
+  outline:2px solid rgba(0,0,0,.65);
+  font-size:11px;
+  text-transform:uppercase;
+  font-weight:900;
+  letter-spacing:.35px;
+  background: linear-gradient(180deg, rgba(255,255,255,.08), rgba(255,255,255,.03));
+  color:var(--ink);
+}
+
+.dot{
+  width:8px;height:8px;
+  border:1px solid rgba(255,255,255,.25);
+  outline:2px solid rgba(0,0,0,.65);
+  background: rgba(255,255,255,.10);
+}
+.dot.ok{background:var(--ok)}
+.dot.warn{background:var(--warn)}
+.dot.bad{background:var(--danger)}
+
+.mini{
+  font-size:12px;
+  color: rgba(242,244,255,.92);
+  line-height:1.4;
+  margin:8px 0 0 0;
+}
+
+.footer{
+  font-size:11px;
+  color: rgba(255,255,255,.80);
+  text-align:center;
+  opacity:.9;
+}
+
+.kbd{
+  font-family: "Courier New", monospace;
+  padding:2px 6px;
+  border:1px solid rgba(255,255,255,.30);
+  border-bottom-width:2px;
+  border-radius:6px;
+  background: rgba(0,0,0,.28);
+}
+
+.split{ display:grid; gap:12px; }
