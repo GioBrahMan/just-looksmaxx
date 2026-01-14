@@ -70,7 +70,7 @@ body{
 .brand{
   display:flex;
   align-items:center;
-  gap:10px;
+  gap:6px;
   font-weight:700;
   letter-spacing:.4px;
   text-transform:uppercase;
@@ -111,31 +111,37 @@ body{
   backdrop-filter: blur(6px);
 }
 
-/* CALMER SECTION HEADERS (fixes eye strain) */
 .win-title{
   background: linear-gradient(
     180deg,
     rgba(120,135,170,.50),
     rgba(85,100,135,.50)
   );
-  color:#0a1020;
+  color: rgba(245,248,255,.92);
   padding:10px 12px;
-  font-weight:900;
+  font-weight:1000;
   font-size:13px;
   display:flex;
   align-items:center;
   justify-content:space-between;
   gap:10px;
   text-transform:uppercase;
-  border-bottom:1px solid rgba(255,255,255,.12);
-  text-shadow:none;
+  border-bottom:1px solid rgba(255,255,255,.14);
+
+  /* Visibility boost */
+  letter-spacing:.55px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.55);
 }
+
 
 .subtle{
   font-size:11px;
-  opacity:.92;
-  color:#0a1020;
+  opacity:1;
+  color: rgba(245,248,255,.88);
+  letter-spacing:.45px;
+  text-shadow: 0 1px 0 rgba(0,0,0,.55);
 }
+
 
 /* CALMER PANEL BODY (fixes eye strain) */
 .win-body{
