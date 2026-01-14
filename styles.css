@@ -1,28 +1,27 @@
 :root{
-  /* Dark-retro palette (same UI, no bright whites) */
-  --bg1:#070815;
-  --bg2:#0e1430;
+  --bg1:#05060c;
+  --bg2:#0b1020;
 
-  --panel:#0f1222;
-  --panel2:#0b0e1b;
+  --panel:#0e1424;
+  --panel2:#0a0f1c;
 
-  --ink:#f2f4ff;
-  --muted:#a8acc4;
+  --ink:#f4f6ff;
+  --muted:#9aa3c7;
 
-  --accent:#00d4ff;
-  --accent2:#ff3bd4;
+  /* Primary + Accent */
+  --accent:#4fd1ff;     /* ice blue */
+  --accent2:#7c5cff;    /* royal violet */
 
-  --ok:#30e07a;
-  --warn:#ffd15a;
-  --danger:#ff3b5c;
+  /* Status */
+  --ok:#4ce39a;
+  --warn:#f5c26b;
+  --danger:#ff5c7a;
 
-  --shadow: 0 14px 0 rgba(0,0,0,.55);
-  --border-dark:#060713;
-  --border-light:rgba(255,255,255,.22);
-
-  --glass: rgba(255,255,255,.06);
-  --glass2: rgba(255,255,255,.03);
+  --border-dark:#02040a;
+  --border-light:rgba(255,255,255,.16);
+  --shadow:0 18px 50px rgba(0,0,0,.85);
 }
+
 
 *{box-sizing:border-box}
 html,body{height:100%}
@@ -48,7 +47,7 @@ body{
 }
 
 .topbar{
-  background: linear-gradient(90deg, #1b2a6b, #4b2aa6, #b12a7e);
+  background: linear-gradient(90deg, var(--accent2), var(--accent));
   color:#fff;
   padding:12px 14px;
   border:1px solid var(--border-light);
