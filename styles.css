@@ -1,0 +1,36 @@
+:root{
+  --bg1:#070815;
+  --bg2:#0e1430;
+  --panel:#0f1222;
+  --panel2:#0b0e1b;
+  --ink:#f2f4ff;
+  --muted:#a8acc4;
+  --accent:#00d4ff;
+  --accent2:#ff3bd4;
+  --ok:#30e07a;
+  --warn:#ffd15a;
+  --danger:#ff3b5c;
+  --shadow: 0 14px 0 rgba(0,0,0,.55);
+  --border-dark:#060713;
+  --border-light:rgba(255,255,255,.22);
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+
+body{
+  margin:0;
+  font-family: "Verdana","MS Sans Serif",system-ui,sans-serif;
+  color:var(--ink);
+  background:
+    radial-gradient(circle at 25% 25%, rgba(255,255,255,.08), transparent 40%),
+    radial-gradient(circle at 70% 35%, rgba(0,212,255,.10), transparent 45%),
+    radial-gradient(circle at 40% 75%, rgba(255,59,212,.10), transparent 45%),
+    linear-gradient(135deg, var(--bg1), var(--bg2));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:24px;
+}
+
+/* everything else unchanged from your original */

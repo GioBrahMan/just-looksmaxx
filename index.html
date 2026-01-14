@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Just Looksmaxx — Protocol + Goals + Streak</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+
+<body>
+  <div class="shell">
+    <div class="topbar">
+      <div class="brand">
+        <span class="pixel" aria-hidden="true"></span>
+        <span>Just Looksmaxx</span>
+      </div>
+      <div class="hint">
+        Save your goals + protocol.<br/>
+        Then type your daily check-in and hit <span class="kbd">Check In</span>.
+      </div>
+    </div>
+
+    <div class="grid">
+      <!-- Left -->
+      <section class="window">
+        <div class="win-title">
+          <span>Daily Check-In</span>
+          <span class="subtle">local save ✓</span>
+        </div>
+
+        <div class="win-body">
+          <div class="split">
+            <div>
+              <label for="goals">Current looksmaxxing goal(s)</label>
+              <textarea id="goals" class="ta-goals"></textarea>
+            </div>
+
+            <div>
+              <label for="today">Type your protocol (today’s check-in)</label>
+              <textarea id="today" class="ta-today"></textarea>
+            </div>
+          </div>
+
+          <div class="row">
+            <button class="btn-primary" id="saveGoalsBtn">Save Goals</button>
+            <button class="btn-primary" id="saveProtocolBtn">Save Protocol</button>
+            <button class="btn-ok" id="checkInBtn">Check In (Today)</button>
+            <button class="btn-danger" id="resetBtn">Reset Streak + Clear</button>
+          </div>
+
+          <p class="mini" id="statusLine">Status: ready.</p>
+        </div>
+      </section>
+
+      <!-- Right -->
+      <aside class="window">
+        <div class="win-title">
+          <span>Streak + Saved Reference</span>
+          <span class="subtle">v1.1</span>
+        </div>
+
+        <div class="win-body">
+          <div class="stats">
+            <div class="stat">
+              <h3>Current streak</h3>
+              <p class="big"><span id="streakNum">0</span> days</p>
+              <div class="pill">
+                <span class="dot warn" id="streakDot"></span>
+                <span id="streakState">not checked in</span>
+              </div>
+              <p class="mini" id="lastCheckIn">Last check-in: never</p>
+            </div>
+
+            <div class="stat">
+              <h3>Saved goals</h3>
+              <div class="refbox" id="savedGoalsBox"></div>
+            </div>
+
+            <div class="stat">
+              <h3>Saved protocol</h3>
+              <div class="refbox" id="savedProtocolBox"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+
+    <div class="footer">© Just Looksmaxx — retro MVP. No account. No tracking.</div>
+  </div>
+
+  <!-- External JS -->
+  <script src="./app.js" defer></script>
+</body>
+</html>
