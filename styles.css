@@ -1,24 +1,30 @@
 :root{
-  --bg1:#080a10;
-  --bg2:#0f1420;
+  /* Backgrounds */
+  --bg1:#0b0f1a;
+  --bg2:#12182a;
 
-  --panel:#101627;
-  --panel2:#0b101c;
+  --panel:#141b2f;
+  --panel2:#101627;
 
-  --ink:#eef1ff;
-  --muted:#a2aacb;
+  /* Text */
+  --ink:#eef1f7;
+  --muted:#9aa3b8;
 
-  --accent:#6dd6ff;
-  --accent2:#9b8cff;
+  /* Accents (calm, not neon) */
+  --accent:#7fb3ff;     /* soft steel blue */
+  --accent2:#9b93ff;    /* muted violet */
 
-  --ok:#5ce6a6;
-  --warn:#eac36d;
-  --danger:#ff6b82;
+  /* Status colors (softened) */
+  --ok:#6fd6a2;
+  --warn:#e6c77a;
+  --danger:#e07a8c;
 
-  --border-dark:#03050b;
-  --border-light:rgba(255,255,255,.12);
-  --shadow:0 16px 44px rgba(0,0,0,.8);
+  /* UI chrome */
+  --border-dark:#070a14;
+  --border-light:rgba(255,255,255,.14);
+  --shadow:0 14px 42px rgba(0,0,0,.75);
 }
+
 
 
 *{box-sizing:border-box}
@@ -45,7 +51,7 @@ body{
 }
 
 .topbar{
-  background: linear-gradient(90deg, var(--accent2), var(--accent));
+  background: linear-gradient(90deg, #2b3570, #3a3f82);
   color:#fff;
   padding:12px 14px;
   border:1px solid var(--border-light);
@@ -199,12 +205,14 @@ button{
   text-transform:uppercase;
   font-size:12px;
   letter-spacing:.45px;
-  box-shadow: 0 8px 0 rgba(0,0,0,.50);
+  box-shadow: 0 6px 0 rgba(0,0,0,.45);
   transition: transform .06s ease, filter .12s ease;
 }
 button:hover{ filter: brightness(1.08); }
-button:active{ transform: translateY(2px); box-shadow: 0 6px 0 rgba(0,0,0,.50); }
-
+button:active{
+  transform: translateY(1px);
+  box-shadow: 0 5px 0 rgba(0,0,0,.45);
+}
 .btn-primary{
   background: linear-gradient(180deg, rgba(0,212,255,.28), rgba(0,212,255,.10));
 }
