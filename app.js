@@ -34,7 +34,7 @@ const setLast = iso => localStorage.setItem(K_LAST, iso);
 // Boot
 goalsEl.value = localStorage.getItem(K_DRAFT_GOALS) || "";
 todayEl.value = localStorage.getItem(K_DRAFT_TODAY) || "";
-savedGoalsBox.textContent = localStorage.getItem(K_SAVED_GOALS) || "— nothing saved yet —";
-savedProtocolBox.textContent = localStorage.getItem(K_SAVED_PROTOCOL) || "— nothing saved yet —";
+savedGoalsBox.textContent = localStorage.getItem(K_SAVED_GOALS) || "— nothing saved yet";
+savedProtocolBox.textContent = localStorage.getItem(K_SAVED_PROTOCOL) || "— nothing saved yet";
 streakNumEl.textContent = getStreak();
 lastEl.textContent = `Last check-in: ${getLast() || "never"}`;
